@@ -1,4 +1,6 @@
-/* Ques 1: Search an element in an array */
+/* Ques 1: Search an element in an array.
+   The program checks whether a given element exists in a user-input array.
+*/
 
 #include <iostream>
 using namespace std;
@@ -7,7 +9,7 @@ int main() {
 	int z, n;      // z = element to search, n = size of array.
 	string result; // To store the result ("Yes" if found, "No" if not).
 
-	// Prompt for user to enter the element to search.
+	// Prompt for the user to enter the element to search.
 	cout << "The element which you want to search: ";
 	cin >> z;
 
@@ -41,8 +43,8 @@ int main() {
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 /* Ques 1: Search an element in an array with multiple test cases.
-   The program checks whether a given element exists in the array or not
-   for multiple test cases.
+   The program checks whether a given element exists in the array or not,
+   for multiple test cases entered by the user.
 */
 
 #include <iostream>
@@ -88,7 +90,7 @@ int main() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-/* Ques 2: Find maximum value in an Array */
+/* Ques 2: Find maximum value in an array. The program finds and displays the maximum value (tallest mountain) */
 
 #include <iostream>
 using namespace std;
@@ -107,7 +109,7 @@ int main() {
 
     int Tallest = arr[0];         // Assuming the first mountain as the tallest initially.
     for (int j = 0; j < n; ++j) { // Using the bubble sort algorithm to update the tallest value if a taller mountain is found.
-        if (Tallest < arr[j]) {   // <= if the array has the same 2-3 values. While it only check for the largest means it can be false for the same values.
+        if (Tallest < arr[j]) {   // <= if the array has the same 2-3 values. While it only checks for the largest means, it can be false for the same values.
             Tallest = arr[j];
 			// cout << "arr[j] : " << arr[j] << endl;
         }
@@ -120,7 +122,10 @@ int main() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-/* Ques 2: Find maximum value in an Array with multiple test cases. */
+/* Ques 2: Find maximum value in an array with multiple test cases.
+   The program finds and displays the maximum value from the array,
+   for multiple test cases.
+*/
 
 #include <iostream>
 using namespace std;
@@ -132,7 +137,7 @@ int main() {
 
     // Loop through all test cases.
     while (T > 0) { // better condition T--
-		cout << "Enter the no. of elements in Array: ";
+		cout << "Enter the no. of elements in the Array: ";
         cin >> n;
 		
         int arr[n];
@@ -160,7 +165,10 @@ int main() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-/* Ques 3: Take a discount coupon or Not */
+/* Ques 3: Take a discount coupon or not.
+   The program decides whether purchasing a discount coupon results in a lower total cost of items or not,
+   for multiple test cases.
+*/
 
 #include <iostream>
 using namespace std;
@@ -209,7 +217,10 @@ int main() {
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
-/* Ques 4: Cost of Groceries */
+/* Ques 4: Cost of Groceries
+   The program calculates the total cost of grocery items that meet a minimum freshness value,
+   for multiple test cases.
+*/
 
 #include <iostream>
 using namespace std;
