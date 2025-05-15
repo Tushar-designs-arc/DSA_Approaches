@@ -87,3 +87,75 @@ int main() {
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+/* Ques 2: Find maximum value in an Array */
+
+#include <iostream>
+using namespace std;
+	
+int main() {
+	int n;
+	cout << "Enter the no. of elements in the Array: ";
+    cin >> n;
+
+    int arr[n];
+	cout << "Enter the Mountain's height: ";
+    for (int i = 0; i < n; ++i) {
+        cin >> arr[i];
+        // cout << "arr[i] : " << arr[i] << endl;
+    }
+
+    int Tallest = arr[0];         // Assuming the first mountain as the tallest initially.
+    for (int j = 0; j < n; ++j) { // Using the bubble sort algorithm to update the tallest value if a taller mountain is found.
+        if (Tallest < arr[j]) {   // <= if the array has the same 2-3 values. While it only check for the largest means it can be false for the same values.
+            Tallest = arr[j];
+			// cout << "arr[j] : " << arr[j] << endl;
+        }
+    }
+
+    cout << "Tallest Mountain: " << Tallest;
+	return 0;
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+/* Ques 2: Find maximum value in an Array with multiple test cases. */
+
+#include <iostream>
+using namespace std;
+	
+int main() {
+    int T, n;
+	cout << "Enter the no. of Test cases: ";
+    cin >> T;
+
+    // Loop through all test cases.
+    while (T > 0) { // better condition T--
+		cout << "Enter the no. of elements in Array: ";
+        cin >> n;
+		
+        int arr[n];
+		cout << "Enter the Mountain's height: ";
+        for (int i = 0; i < n; ++i) {
+            cin >> arr[i];
+            // cout << "arr[i] : " << arr[i] << endl;
+        }
+
+        int Tallest = arr[0];
+        for (int j = 0; j < n; ++j) {
+            if (Tallest < arr[j]) {
+                Tallest = arr[j];
+                // cout << "arr[j] : " << arr[j] << endl;
+            }
+        }
+
+        cout << "Tallest Mountain: " << Tallest << endl;
+        --T;
+    }
+
+    return 0;
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
