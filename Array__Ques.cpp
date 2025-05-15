@@ -159,3 +159,93 @@ int main() {
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+/* Ques 3: Take a discount coupon or Not */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cout << "Enter the no. of Test cases: ";
+    cin >> t;
+
+    while (t--) {
+        int n, x, y;     // n = no. of items, x = cost of the coupon, y = discount amount per item.
+        cout << "Enter the no. of elements followed by the cost of the coupon and the reducing amount from each item: ";
+        cin >> n >> x >> y;
+
+        int a[n];
+        int Total = 0;   // Total cost without buying the discount coupon, meaning without adding x in amount.
+        cout << "Enter the price of items: ";
+
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+            Total += a[i];
+            // cout << "Total : " << Total << endl;
+        }
+
+        int Discount = x;    // Discount is the amount with the cost of x (coupon) initially.
+
+        // Calculate total cost after applying the coupon
+        for (int j = 0; j < n; j++) {
+            if ((a[j] - y) < 0) {    // Condition to set the price = 0 if the price of an item is less than the discount "y". Instead of setting the -ive value, which will reduce the amount in the Discount.
+                Discount += 0;
+            }
+            else {   // Otherwise, subtract discount from item price.
+                Discount += (a[j] - y);
+                // cout << "Discount : " << Discount << endl;
+            }
+        }
+
+        // Compare total costs and decide whether the coupon is beneficial or not.
+        if (Discount < Total)
+            cout << "Coupon" << endl;
+        else
+            cout << "No Coupon" << endl;
+    }
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+/* Ques 4: Cost of Groceries */
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int T;
+    cout << "Enter the no. of Test cases: ";
+    cin >> T;
+
+    while (T--) {
+        int n, x;     // n = no. of elements, x = min. required freshness value.
+        cout << "Enter the no. of elements followed by the min. freshness value that you want: ";
+        cin >> n >> x;
+
+        int A[n], B[n];     // A stores freshness values, B stores corresponding costs.
+        cout << "Enter the freshness value of each item: ";
+        for (int i = 0; i < n; i++) {
+            cin >> A[i];
+        }
+        
+        cout << "Enter the cost of each item: ";
+        for (int j = 0; j < n; j++) {
+            cin >> B[j];
+        }
+
+        int Total = 0; // Stores the total cost of groceries that you can buy.
+        for(int k = 0; k < n; k++) {
+            if(A[k] >= x) {    // Check if item's freshness is at least the min. required value.
+                Total += B[k]; // If items have, then add the cost of that item.
+            }
+        }
+        cout << "Total Amount: " << Total << endl;
+    }
+
+    return 0;
+}
+
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
