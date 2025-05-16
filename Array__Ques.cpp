@@ -262,3 +262,102 @@ int main() {
 
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+/* Ques 5: MIN. To MAX.
+   This program finds the min. value in an array and counts how many elements
+   need to be changed to make elements equal to that min. value.
+   for each test case, and outputs the minimum required no. of such operations.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cout << "Enter the no. of Test cases: ";
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cout << "Enter the no. of elements in the Array: ";
+        cin >> n;
+        
+        int arr[n];
+        cout << "Enter elements of Array: ";
+        for (int i = 0; i < n; i++) {
+            cin >> arr[i];
+        }
+
+        // Find the minimum value in the array
+        int M = arr[0];
+        for (int j = 0; j < n; j++) {
+            if (arr[j] <= M) { // Using the bubble sort algorithm to find the min. value.
+                M = arr[j];
+                // cout << "M : " << M << endl;
+                // cout << "arr[j] : " << j << endl;
+            }
+        }
+
+        int x = M, op = 0;    // op is the tracker which track for the no. of operations (reassignments).
+        for (int k = 0; k < n; k++) {
+            if (arr[k] > M) { // Check for the greater value than M.
+                arr[k] = x;   // replacing x with that index which has the greater value than M.
+                // cout << "arr[k] : " << k << endl;
+                ++op;
+            }
+        }
+
+        cout << "No. of operations required: " << op << endl;
+    }
+
+    return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+
+/* Ques 6: Running Comparison
+   This program calculates the no. of days when both runners (Alice and Bob) are happy.
+   A runner is unhappy if the other runs more than twice their distance on a given day.
+   The program processes multiple test cases.
+*/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int t;
+    cout << "Enter the no. of Test cases: ";
+    cin >> t;
+
+    while (t--) {
+        int n;
+        cout << "Enter the no. of elements in the Array: ";
+        cin >> n;
+
+        int Alice_Runs[n], Bob_Runs[n];
+        for (int i = 0; i < n; i++) {
+            cin >> Alice_Runs[i];
+        }
+
+        for (int i = 0; i < n; i++) {
+            cin >> Bob_Runs[i];
+        }
+
+        int days = 0; // days is the track for tracking the no. of days when both are happy.
+        for (int i = 0; i < n; i++) {
+            if (Bob_Runs[i] > (Alice_Runs[i] * 2) || Alice_Runs[i] > (Bob_Runs[i] * 2)) { // We use OR operator (||) because if the first condition become true that means alice is happy and bob is unhappy, and if the second condition become true then the bob is happy and alice is unhappy. But we want both to be happy.
+            }
+            else {
+                // Both runners are happy on this day.
+                days++; 
+            }
+        }
+
+        cout << "No. of Days: " << days << endl; // Output total happy days for current test case.
+    }
+
+    return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------//
