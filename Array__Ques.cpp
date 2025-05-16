@@ -136,7 +136,7 @@ int main() {
     cin >> T;
 
     // Loop through all test cases.
-    while (T > 0) { // better condition T--
+    while (T > 0) { // better condition (T--).
 		cout << "Enter the no. of elements in the Array: ";
         cin >> n;
 		
@@ -195,7 +195,7 @@ int main() {
 
         int Discount = x;    // Discount is the amount with the cost of x (coupon) initially.
 
-        // Calculate total cost after applying the coupon
+        // Calculate total cost after applying the coupon.
         for (int j = 0; j < n; j++) {
             if ((a[j] - y) < 0) {    // Condition to set the price = 0 if the price of an item is less than the discount "y". Instead of setting the -ive value, which will reduce the amount in the Discount.
                 Discount += 0;
@@ -212,6 +212,8 @@ int main() {
         else
             cout << "No Coupon" << endl;
     }
+
+    return 0;
 }
 
 
